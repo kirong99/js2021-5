@@ -1,0 +1,47 @@
+
+/*마크업1*/
+div{
+    position: relative;overflow: hidden; background-color: #ddd;
+}
+h3{
+    background-color: lightgreen; color : royalblue; text-align: center;
+    padding: 30px; margin:0;
+}
+section{
+    background-color: ivory;
+}
+article{
+    float : left ; width : 70%; height: 300px ; background-color: orange;}
+aside{
+    float : right ; width : 30%; height:300px; background-color: violet;}
+footer{
+    clear: both;padding: 30px;background-color: #666;text-align: center;
+color: white;}
+
+/* 마크업4 */
+#testWrap{
+    background-color: #f4f4f4;
+}
+.test{
+    overflow: hidden;width:960px;margin: 0 auto ;
+}
+.test h3{
+    padding :70px 0 20px;font-size: 24px;color:yellowgreen;text-align: center; background-color: transparent;
+}
+.test div{
+    float: left; width: 29.1%; padding: 40px 30px;
+    box-sizing: border-box; margin: 0px 20px;
+}
+.test .ico-img{
+    display: block;width: 120px; height: 120px; background-color: ivory;
+    margin: auto;border-radius: 50%;
+}
+.test dl{
+    margin-top: 10px;text-align: center;
+}
+.test dt{
+    font-weight: 700; font-size: 18px;
+}
+.test dd{
+    margin: 20px 0px;
+}
