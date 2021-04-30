@@ -1,6 +1,139 @@
 # 최기룡 [201840231]
 
+## [4월 27일]
+### 오늘 배운 내용 요약(스크립트 프로그래밍) <br />
 
+### 객체
+
+- 1. 배열
+
+- 배열 선언 및 접근
+
+``` javascript
+let array = ['사과', '바나나', '망고', '딸기']
+array[0]; //사과
+array[1]; //바나나
+```
+- 배열은 요소에 접근할 때 인덱스를 사용하고, 객체는 키를 사용한다. <br />
+
+___
+2. 객체 선언
+
+**객체 선언**
+``` javascript
+let product ={
+    제품명:'7D 건조 망고',
+    유형: '당절임',
+    성분:'망고,설탕,메타중아황산나트륨,치자황색소',
+    원산지:'필리핀'
+};
+console.log(product); //출력
+```
+> 키: 제품명, 유형, 성분, 원산지
+> 속성: 7D 건조 망고 ,당절임, 망고설탕..., 필리핀
+
+**객체 접근**
+product['제품명'] = product.제품명 ==> 출력값이 같다.
+
+- 코드 **6-1.js파일**
+<br />
+___
+
+3. 객체와 반복문
+
+- for in 반복문을 사용해서 객체에 반복문을 적용한다.
+
+``` javascript
+let fruit = {
+    name : '사과',
+    price: 1200,
+    origin : '한국'
+};
+for (let key in fruit){
+    console.log(`${key}: ${fruit[key]}`);
+}
+```
+<br />
+
+![결과화면](./결과화면(객체).PNG) <br />
+
+___
+4. 속성과 메소드
+
+- 요소: 배열 내부에 있는 값
+- 속성: 객체 내부에 있는 값
+
+**다양한 자료형의 객체**
+- number, string ,boolean , array, method ...
+
+- 메소드: 객체의 속성 중 자료형이 함수인 속성
+
+``` javascript
+let object={
+    name: '바나나',
+    price: 1200,
+    print:function(){ //메소드 내부에서 this 키워드 사용
+        console.log(`${this.name}의 가격은 ${this.price}원입니다.`)
+    }
+};
+object.print(); //메소드 호출
+                // 바나나의 가격은 1200원입니다.
+```
+- 객체 지향 프로그래밍: 현실의 객체를 모방해서 프로그래밍
+- 배열과 객체를 사용하면 여러 개의 데이터를 쉽게 다룰 수 있다.
+
+- 코드 **6-9.js파일** <br />
+___
+5. 생성자 함수
+
+- 객체를 만드는 함수, 대문자로 시작하는 이름 사용
+
+**기본 형태**
+```javascript
+function Product(name,price){
+    this.name = name;
+    this.price = price;
+}
+```
+
+- 코드 **6-13.js파일** <br />
+___
+**6.프로토타입** 
+
+- 생성자 함수로 만든 객체는 프로토타입 공간에 메소드를 지정하고 모든 객체가 공유 하도록 한다. *해당 함수를 생성자 함수로 사용했을때만 의미가 있다*
+- 자바스크립트는 프로토타입 기반 언어라고 불린다. 자바스크립트는 클래스라는 개념이 없기에 프로토타입이 존재한다.
+
+- 코드 **6-16.js파일**
+<br />
+
+___
+
+7. 조금 더 나아가기
+- 값이 있는지 확인하는 코드
+``` javascript
+let zeroNumber = 0;
+let falseBoolean = '';
+let emptyString = '';
+let undefinedValue;
+let nullValue= null;
+
+if(zeroNumber == null)
+    console.log('은 존재하지 않는 값입니다.');
+
+if(falseBoolean == null)
+    console.log('false는 존재하지 않는 값입니다.');
+
+if(emptyString == null)
+    console.log('빈 문자열은 존재하지 않는 값입니다.');
+
+if(undefinedValue == null)
+    console.log('undefined는 존재하지 않는 값입니다.');
+
+if(nullValue == null)
+    console.log('null은 존재하지 않는 값입니다.');
+
+```
+![결과화면](./결과화면(null).PNG)
 
 ## [4월 13일]
 ### 오늘 배운 내용 요약(스크립트 프로그래밍) <br />
