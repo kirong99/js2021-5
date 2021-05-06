@@ -1,5 +1,114 @@
 # 최기룡 [201840231]
 
+## [5월 4일]
+### 오늘 배운 내용 요약(스크립트 프로그래밍) <br />
+
+**1.프로토타입** 
+
+- 생성자 함수로 만든 객체는 프로토타입 공간에 메소드를 지정하고 모든 객체가 공유 하도록 한다. *해당 함수를 생성자 함수로 사용했을때만 의미가 있다*
+- 자바스크립트는 프로토타입 기반 언어라고 불린다. 자바스크립트는 클래스라는 개념이 없기에 프로토타입이 존재한다.
+
+- 코드 **6-16.js파일**
+<br />
+
+___
+
+2. 조금 더 나아가기
+- 값이 있는지 확인하는 코드
+``` javascript
+let zeroNumber = 0;
+let falseBoolean = '';
+let emptyString = '';
+let undefinedValue;
+let nullValue= null;
+
+if(zeroNumber == null)
+    console.log('은 존재하지 않는 값입니다.');
+
+if(falseBoolean == null)
+    console.log('false는 존재하지 않는 값입니다.');
+
+if(emptyString == null)
+    console.log('빈 문자열은 존재하지 않는 값입니다.');
+
+if(undefinedValue == null)
+    console.log('undefined는 존재하지 않는 값입니다.');
+
+if(nullValue == null)
+    console.log('null은 존재하지 않는 값입니다.');
+
+```
+![결과화면](./결과화면(null).PNG)
+
+___
+
+3. 기본 자료형과 객체 자료형의 차이
+
+- 기본 자료형 숫자, 문자열, 불
+``` javascript
+// 기본 자료형
+let number = 273;
+let string = '안녕하세요';
+let boolean = true;
+
+// 자료형을 출력
+console.log(typeof number);
+console.log(typeof string);
+console.log(typeof boolean);
+```
+___
+- 객체 숫자, 문자열, 불
+``` javascript
+// 객체 자료형 시작은 항상 대문자!
+let number = new Number(482);
+let string = new String('안녕');
+let boolean = new Boolean(true);
+
+// 자료형 출력
+console.log(typeof number);
+console.log(typeof string);
+console.log(typeof boolean);
+```
+___
+
+- 차이점 : 기본 자료형은 객체가 아니므로 속성과 메소드를 추가할 수 없다. <br />
+>기본 자료형에 프로토 타입으로 메소드는 추가 가능하다.
+___
+
+4. Number 객체
+
+- 기본 객체 생성
+``` javascript
+let numberFromLiteral = 273;
+let numberFromConstructor = new Number(273);
+```
+
+- 메소드는 코드 **07.js**에 설명.
+
+___
+
+- 생성자 함수의 속성
+
+``` javascript
+// 생성자 함수 생성
+function Constructor() { }
+Constructor.property = 273;
+Constructor.method = function () { };
+
+// 생성자 함수의 속성과 메소드 출력
+console.log(Constructor.property);
+console.log(Constructor.method);
+```
+___
+- Number 생성자 함수의 속성
+> MAX_VALUE 자바스크립트의 숫자가 나타낼 수 있는 최대숫자
+> MIN_VALUE 자바스크립트의 숫자가 나타낼 수 있는 최소숫자
+> NaN 자바스크립트의 숫자로 나타낼 수 없는 숫자
+> POSITIVE_INFINITY 양의 무한대숫자
+> NEGATIVE_INFINITY 음의 무한대숫자
+
+- 예제는 코드 **07.js**파일에.
+
 ## [4월 27일]
 ### 오늘 배운 내용 요약(스크립트 프로그래밍) <br />
 
@@ -97,43 +206,6 @@ function Product(name,price){
 ```
 
 - 코드 **6-13.js파일** <br />
-___
-**6.프로토타입** 
-
-- 생성자 함수로 만든 객체는 프로토타입 공간에 메소드를 지정하고 모든 객체가 공유 하도록 한다. *해당 함수를 생성자 함수로 사용했을때만 의미가 있다*
-- 자바스크립트는 프로토타입 기반 언어라고 불린다. 자바스크립트는 클래스라는 개념이 없기에 프로토타입이 존재한다.
-
-- 코드 **6-16.js파일**
-<br />
-
-___
-
-7. 조금 더 나아가기
-- 값이 있는지 확인하는 코드
-``` javascript
-let zeroNumber = 0;
-let falseBoolean = '';
-let emptyString = '';
-let undefinedValue;
-let nullValue= null;
-
-if(zeroNumber == null)
-    console.log('은 존재하지 않는 값입니다.');
-
-if(falseBoolean == null)
-    console.log('false는 존재하지 않는 값입니다.');
-
-if(emptyString == null)
-    console.log('빈 문자열은 존재하지 않는 값입니다.');
-
-if(undefinedValue == null)
-    console.log('undefined는 존재하지 않는 값입니다.');
-
-if(nullValue == null)
-    console.log('null은 존재하지 않는 값입니다.');
-
-```
-![결과화면](./결과화면(null).PNG)
 
 ## [4월 13일]
 ### 오늘 배운 내용 요약(스크립트 프로그래밍) <br />
