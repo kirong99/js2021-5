@@ -1,5 +1,143 @@
 # 최기룡 [201840231]
 
+
+## [5월 11일]
+### 오늘 배운 내용 요약(스크립트 프로그래밍) <br />
+
+**1.Date 객체**
+
+- Date 객체 생성 방법
+- 생성자 함수
+> new Date() 현재 시간으로 Date 객체 생성
+> new Date((유닉스 타임)) 유닉스타임(1970년 1월 1일 00시 00분 00초로부터 경과한 밀리초)으로 객체 생성
+> new Date((시간 문자열)) 문자열로 객체 생성
+> new Date(년,월-1,일,시간,분,초,밀리초) 시간요소를 기반으로 객체 생성
+**Month를 나타내는 '월'은 0부터 시작
+
+**객체 생성 코드**
+```javascript
+let dateA = new Date();
+console.log(dateA);
+
+let dateB = new Date(6313454231);
+console.log(dateB);
+
+let dateC = new Date("December 9 , 19991 21:30:00");
+console.log(dateC);
+
+let dateD = new Date(1991,12-1,9,21,30,0,0);
+console.log(dateD);
+```
+
+- 예제 코드는 **07-18.js**파일에
+
+___
+
+2. Array 객체
+
+> Array 객체 메소드는 **4월6일 조금더 나아가기에 있는 메소드들 설명**
+
+- ECMAScript5에서 추가된 메소드
+>forEach() 배열의 요소를 하나씩 뽑아 반복을 돌림
+>map() 콜백 함수에서 리턴하는 것을 기반으로 새로운 배열을 만듦
+>filter() 콜백 함수에서 true를 리턴하는 것으로만 새로운 배열을 만들어 리턴
+
+- 예제 코드는 **07-24.js**파일에
+
+___
+
+3. 조금 더 나아가기
+
+- 프로토타입에 메소드 추가
+
+```javascript
+String.prototype.contain=function(input){
+    return this.index0f(input) >= -1;
+}
+
+console.log('안녕하세요'.contain('안녕'));
+console.log('안녕하세요'.contain('빙그르르'));
+
+```
+
+___
+
+4. 예외처리
+
+- 예외: 실행에 문제가 발생하면 자동 중간됨.
+- 예외 처리: 오류에 대처할 수 있게 하는것.
+
+- 기본 예외 처리 : 사전에 해당 데이터가 undefined인지 조건문을 확인
+
+```javascript
+//함수 선언
+function callTenTimes(callback){
+    if(callback){
+        for(let i = 0; i<10; i++){
+            callback();
+        }
+    }else{
+        console.log(`매개 변수 callback이 지정되지 않았습니다.`);
+    }
+}
+//정상 실행
+callTenTimes(function () {console.log(`안녕하세요`);});
+//예외 발생
+callTenTimes();
+```
+- try catch finally 구문
+```javascript
+try{
+    //예외가 발생하면
+} catch (exception){
+    //여기서 처리합니다.
+} finally {
+    //여기는 무조건 실행됩니다.
+}
+```
+
+- catch구문, finally 구문 생략 가능
+
+- 고급 예외 처리 예제는 **08-3.js**파일에
+
+___
+
+5. 예외 객체
+
+- 예외가 발생하면 어떤 예외가 발생했는지 정보를 전달함
+- name 속성과 message 속성이 있음
+
+```javascript
+try{
+    //예외를 발생시킵니다.
+    error.error.error();
+} catch(e){
+    console.log(e.name);
+    console.log(e.message);
+    // 결과 ReferenceError
+    //      error is not defined
+}
+```
+___
+6. 예외 강제 발생
+
+- throw 키워드 사용
+
+- 간단한 예외 강제 발생에 사용
+> throw '강제 예외';
+
+- 자세한 예외 출력은 Error 객체를 사용
+
+```javascript
+const error = new Error('메시지');
+error.name = '내 마음대로';
+error.message = '오류 메시지';
+
+throw error;
+```
+
+- 예제는 **08-11.js** 파일에
+
 ## [5월 4일]
 ### 오늘 배운 내용 요약(스크립트 프로그래밍) <br />
 
