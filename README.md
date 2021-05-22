@@ -1,6 +1,148 @@
 # 최기룡 [201840231]
 
 
+## [5월 18일]
+### 오늘 배운 내용 요약(스크립트 프로그래밍) <br />
+
+**1.전역변수**
+
+- 전역 변수, 전역 함수 ,전역 객체 : 모든 곳에서 사용할 수 있는 것들
+> __(underline2개)filename 현재 실행중인 코드의 파일 경로
+> __dirname 현재 실행중인 코드의 폴더 경로
+
+- Node.js는 process 전역 객체를 제공
+- process 객체는 프로세스 정보를 제공하며 제어할 수 있게 하는 객체
+<br />
+
+**process 객체의 속성**
+>env 컴퓨터 환경정보
+version Node.js의 버전
+versions Node.js와 종속된 프로그램 버전
+arch 프로세서의 아키텍처
+platform 플랫폼을 나타냄
+<br />
+
+**process 객체의 메소드**
+>exit([exitCode=0]) 프로그램 종료
+memoryUsage() 메모리 사용정보객체를 리턴
+uptime() 현재 프로그램이 실행된 시간 리턴
+
+- 예제는 **ch09.js**파일
+
+- Node.js의 이벤트 연결 메소드
+>on(<이벤트 이름>,<이벤트 핸들러>)
+
+- process 객체의 이벤트
+>exit 프로세스가 종료될 때 발생
+uncaughtException 예외가 일어날 때 발생
+
+___
+
+2. os 모듈
+
+- os 모듈 사용, 추출
+```javascript
+const on = require('os');
+```
+
+- os 모듈의 메소드
+>hostname() 운영체제의 호스트 이름 리턴
+type() 운영체제의 이름 리턴
+platform() 운영체제의 플랫폼 리턴
+arch() 운영체제의 아키텍처 리턴
+release() 운영체제의 버전 리턴
+uptime() 운영체제가 실행된 시간 리턴
+loadavg() 로드 에버리지 정보를 담은 배열 리턴
+totalmem() 시스템의 총 메모리를 리턴
+freemem() 시스템의 사용 가능한 메모리 리턴
+cpus() CPU의 정보를 담은 객체를 리턴
+getNetworkInterfaces() 네트워크 인터페이스의 정보를 담은 배열 리턴
+
+<br />
+
+- 예제는 **ch09.js**파일
+___
+
+3. url모듈
+
+- url모듈 추출
+``` javascript
+const url = require(`url`);
+```
+
+- url모듈 메소드
+>parse(urlStr[,parseQueryString=false,slashesDenoteHost=false]) URL 문자열을 URL 객체로 변환해 리턴
+format(urlObj) URL 객체를 URL 문자열로 변환해 리턴
+resolve(from,to) 매개변수를 조합하여 완전한 URL 문자열을 생성해 리턴
+
+___
+
+4. File System모듈
+
+- 모듈 추출 방법
+
+```javascript
+const fs = require('fs');
+```
+
+- 파일 읽기
+>fs.readFileSync(<파일 이름>) 동기적으로 파일을 읽음
+fs.readFile(<파일 이름>,<콜백 함수>) 비동기적으로 파일을 읽음
+
+- 비동기 처리의 장점
+    + 웹 서버를 C++로 만드렴ㄴ 빠르지만, 개발과 유지보수가 어렵다
+    + 프로그래밍 언어자체는 느리지만 개발 속도와 유지 보수성이 좋다.
+    + 손쉽게 비동기 처리를 구현하여 빠른 처리가 가능하다.
+
+- 파일 쓰기
+>fs.writeFileSync(<파일 이름>,<문자열>) 동기적으로 파일을 씀
+fs.writeFile(<파일 이름>,<문자열>,<콜백 함수>) 비동기적으로 파일을 씀
+
+- 파일 처리와 예외 처리
+- 동기 코드 예외처리: try catch 구문
+- 비동기 코드 예외처리 : 콜백함수의 첫번째 매개 변수 error를 활용
+
+- 예제 코드는 **ch09.js**파일에
+
+___
+5. 노드 패키지 매니저
+
+- 패키지 매니저 모듈 관리 프로그램을 사용해 모듈 쉽게 설치 가능
+- Node.js는 npm(Node.js Package Manager)패키지 매니저를 사용
+
+- 외부 모듈 설치
+>npm install <모듈 이름> --> 터미널에 작성
+
+___
+6. request 모듈
+
+- 웹 요청을 쉽게 만들어주는 모듈
+> npm install request
+
+- 설치한 request 모듈 사용
+```javascript
+const request = requir(`request`);
+
+const url = `http://www.hanbit.co.kr/store/books/new_book_list.html`;
+request(url,(error,response,body) => {
+    console.log(body)
+    // 실행하면 웹 페이지의 소스 코드를 출력
+});
+```
+___
+7. cheerio 모듈
+
+- request 모듈로 가져온 웹 페이지는 단순한 HTML 문자열
+- cheerio 모듈 : 가져온 웹 페이지의 특정 위치에서 손쉽게 데이터를 추출
+> npm install cheerio
+
+___
+
+8. async 모듈
+
+> npm install async
+
+
 ## [5월 11일]
 ### 오늘 배운 내용 요약(스크립트 프로그래밍) <br />
 
