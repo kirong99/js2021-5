@@ -1,5 +1,167 @@
 # 최기룡 [201840231]
 
+## [6월 1일]
+### 오늘 배운 내용 요약(스크립트 프로그래밍) <br />
+
+1. 사용할 수 없는 코드
+
+- let 키워드와 const 키워드
+
+- 최신 버전 자바스크립트 코드
+>let varialbe = 273;
+const constant = "Hello World";
+
+- 인터넷 익스플로러에서 사용해야 하는 코드
+>var variableA = 273;
+var variable = "Hello World";
+
+- 템플릿 문자열
+
+- 최신 버전 자바스크립트 코드
+>let variable = 273;
+>console.log(`변수의 값은 ${variable}입니다.`);
+
+- 인터넷 익스플로러에서 사용해야 하는 코드
+>var variable = 273;
+>console.log(`변수의 값은 ' + variable + ' 입니다.`);
+
+- 화살표 함수
+
+- 최신 버전 자바스크립트 코드
+>const functionLiteral = () => {
+
+};
+
+- 인터넷 익스플로러에서 사용해야 하는 코드
+>const functionLiteral = function(){
+
+};
+
+- for of 반복문
+
+- 최신 버전 자바스크립트 코드
+```javascript
+const array = ['가','나','다'];
+
+for (let item of array) {
+    console.log(item);
+}
+```
+
+- 인터넷 익스플로러에서 사용해야하는 코드
+``` javascript
+var variable = 273;
+console.log('변수의 값은 ' + variable + '입니다.');
+```
+
+- 사용할 수 없는 메소드를 사용한 코드
+
+- 최신 버전 자바 스크립트 코드
+```javascript
+const array = [1,2,3,4,5];
+
+array.forEach((item,index) => {
+    console.log(`$(item): $(index)`);
+});
+
+```
+
+- 인터넷 익스플로러에서 사용해야 하는 코드
+```javascript
+var array = [1,2,3,4,5];
+
+for (var i = 0; i < array.length; i++){
+    var index = i;
+    var item = array[i];
+    console.log(item+':'+ index);
+}
+```
+
+___
+
+2. window 객체
+
+- 새로운 화면을 열거나 웹 브라우저의 크기를 변경하는 등의 일
+- 대표적으로 경고 출력을 하는 경고창과 입력을 하는 프롬프트를 제공함
+>alert(<메시지>) 경고창을 출력합니다.
+>prompt(<메시지>,<임시 글자>) 프롬프트를 출력합니다.
+
+___
+
+3. screen 객체
+- 웹 브라우저에서 공통으로 활용할 수 있는 속성
+> width 화면의 너비
+height 화면의 높이
+availWidth 실제 화면에서 사용 가능한 너비
+availHeight 실제 화면에서 사용 가능한 높이
+colorDepth 사용 가능한 색상 수
+pixelDepth 한 픽셀당 비트 수
+
+___
+
+4. location 객체와 history 객체
+- 웹 브라우저에서 공통으로 활용할 수 있는 속성
+>href 문서의 URL 주소
+host 호스트 이름과 포트 번호 ex)localhost:52273
+hostname 호스트 이름 ex)localhost
+port 포트 번호 ex)52273
+pathname 디렉토리 경로 ex)/forder/HTMLpage.html
+hash 앵커 이름(#~) ex)#test
+search 요청 매개 변수 ex)?param=10
+protocol 프로토콜 종류 ex)http:
+
+- 메소드
+>assign(<링크>) 매개 변수로 전달한 위치로 이동
+reload() 새로고침
+replace() 매개 변수로 전달한 위치로 이동(뒤로 가기 불가능)
+
+- history 객체의 메소드
+>forward() 앞으로 이동
+back() 뒤로 이동
+
+___
+5. navigator 객체
+- 웹 페이지를 실행하는 웹 브라우저 정보가 들어있음
+- 사용자의 웹 브라우저,운영체제를 구분할 수 있음
+>appCodeName 웹 브라우저의 코드 이름
+appName 웹 브라우저의 이름
+appVersion 웹 브라우저의 버전
+platform 사용 중인 운영체제의 시스템 환경
+userAgent 웹 브라우저의 전체적인 정보
+
+___
+6. jQuery 객체
+
+- jQuery 라이브러리는 $ 함수 활용
+- $ 함수의 매개 변수에는 문서객체, CSS 형식 ,HTML 형식의 문자열 삽입
+>$(<매개 변수>).메소드(<매개 변수>,<매개 변수>)
+window.jQuery = window.$ = jQuery;
+
+- CSS 선택자를 사용해 문서 객체를 선택
+
+>$('h1') h1태그 선택
+$('h1.logo') h1태그 중에 class 속성으로 logo를 가진 태그를 선택
+$('input(type=submit)') input태그 중에 type 속성이 submit인 태그 선택
+
+- 객체 탐색 메소드
+> parent() 부모 태그를 선택
+find() 후손 태그 탐색
+
+- 선택된 문서 객체의 수
+>length 선택된 문서 객체의 수를 구함
+
+- 선택된 문서 객체 추출
+>get() 선택한 문서 객체중 하나를 선택
+
+- each() 메소드 : 선택한 문서 객체에 반복을 적용
+
+- 문자 조작 메소드
+>text() html 태그 내부의 문자를 조작
+>html() html 태그 내부의 문자를 조작(HTML 태그 인식)
+
+
+
+
 ## [5월 25일]
 ### 오늘 배운 내용 요약(스크립트 프로그래밍) <br />
 

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width.initial-scale=1.0">
+    <title>Document</title>
+    <script src="node_modules\jquery\dist\jquery.min.js"></script>
+    <script>
+        //웹 페이지를 모두 불러오면
+        $(document).ready(function () {
+            //h1 태그를 모두 추출하고
+            let $headers = $('h1');
+            for (let i = 0 ; i <$headers.length; i++){
+                // 특정 위치에서
+                if(i%2 == 1) {
+                    let domElement = $headers.get(i);
+                    $(domElement).css(`backgroundColor`,`red`);
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>HeaderA</h1>
+    <h1>HeaderB</h1>
+    <h1>HeaderC</h1>
+    <h1>HeaderD</h1>
+
+</body>
+</html>
